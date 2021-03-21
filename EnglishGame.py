@@ -12,7 +12,7 @@ for row in reader:
     dic[row[0]] = row[1]
 #print (dic)
 while((option != '1' ) and (option != '2')):
-    print(option +"Write 1 for introduce words to the dictionary or 2 for play the game")
+    print("Write 1 for introduce words to the dictionary or 2 for play the game")
     option =input()
 
 if option == '1':
