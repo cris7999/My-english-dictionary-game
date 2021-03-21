@@ -1,4 +1,4 @@
-import pandas as pd
+import random
 import csv
 csvReaderName = open ('Dictionary.csv')
 csvWriterName = open ('Dictionary.csv','a+', newline='')
@@ -18,10 +18,23 @@ while((option != '1' ) and (option != '2')):
 if option == '1':
     print("Write only the new word")
     new_word= input()
-    print("Writer the meaning")
+    print("Write the meaning")
     meaning = input()
     if(new_word in dic):
         print("The word already is in the dictionary")
     else:
         writer.writerow([new_word,meaning])
-    csvWriterName.close()
+
+
+if option == '2':    
+    word_selected = random.choice(list(dic)) 
+    print ("The word is:"+ word_selected)
+    print("Write his translation into spanish")
+    user_translation = input()
+    if user_translation == dic[word_selected]:
+        print("Success! you got it right!")
+    else:
+        print("Fail :( the translation is: " + dic[word_selected])
+ 
+csvWriterName.close()
+csvReaderName.close()
