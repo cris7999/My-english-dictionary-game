@@ -20,5 +20,8 @@ if option == '1':
     new_word= input()
     print("Writer the meaning")
     meaning = input()
-    writer.writerow([new_word,meaning])
+    if(new_word in dic):
+        print("The word already is in the dictionary")
+    else:
+        writer.writerow([new_word,meaning])
     csvWriterName.close()
